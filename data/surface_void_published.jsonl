@@ -1,0 +1,4 @@
+{"note": "tools/surface_void.py, 25 sep 2026: share of a fit's surface with no papyrus within 6 voxels along the normal (Otsu threshold of the scan's own intensities near the fit). Local runs; the audit notebooks compute it for a block of 16 windings of every fit, as fitted and aligned."}
+{"fit": "PHerc0139 curated w034-w041 (z 5000-6000)", "void_frac": 0.0164, "threshold": 86.5, "vertices": 36055}
+{"fit": "the same, moved 7 voxels along the normals (half a sheet)", "void_frac": 0.138, "threshold": 86.5, "vertices": 36032}
+{"fit": "PHerc0826 rodriguescarson published recipe fit, z 8928-9728, all 90 windings (every 3rd vertex)", "void_frac": 0.0886, "threshold": 95.5, "vertices": 84395, "inner_windings_w000_w024": "0.20-0.23", "outer_windings_w032_w088": "0.05-0.10"}

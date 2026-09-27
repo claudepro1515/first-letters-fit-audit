@@ -1,0 +1,10 @@
+# fit_spiral canonical-spiral parametrisation distortion, armando-gaona PHerc0211 recipe-30k meshes (grid step 20 voxels)
+# 3D distance between neighbouring grid vertices / 20 (p5, p50, p95), and angle between the row and column directions (p5, p50)
+w020 columns [0.91 1.14 2.13] rows [0.96 1.05 1.28] angle [65.8 84.4]
+w040 columns [0.76 0.99 2.53] rows [0.95 1.05 1.24] angle [63.9 83.9]
+w060 columns [0.72 1.05 2.89] rows [0.91 1.08 1.44] angle [54.8 81.7]
+w080 columns [0.76 1.25 3.22] rows [0.92 1.11 1.63] angle [51.9 79.3]
+w100 columns [0.97 1.29 2.31] rows [0.97 1.04 1.22] angle [66.4 84.1]
+w120 columns [1.06 1.21 1.45] rows [0.98 1.00 1.04] angle [81.7 87.7]
+# -> not isometric: up to 2-3x stretch along the winding in 5 % of the cells, shear up to ~35 degrees. A First Letters
+#    submission needs a low-distortion flattening (Lasagna flattener / SLIM), as the rules say.
