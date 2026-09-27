@@ -1,6 +1,6 @@
 # Do the First Letters spiral fits follow the sheets? A model-free check, and winding-model supervision for eligible scrolls on free GPUs
 
-**Draft (26 Sep 2026).**
+**Submitted 26 Sep 2026** (Vesuvius Challenge progress prize).
 
 A contribution to the open problem on spiral fitting and winding annotations of the challenge's 2026 open problems
 page ("devise better evaluation suites and loss functions to fit the spiral"): an evaluation of spiral fits that needs
