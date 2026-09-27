@@ -1,0 +1,60 @@
+{
+ "scroll": "PHerc0826",
+ "volume": "20250821151701-9.362um-1.2m-113keV-masked.zarr",
+ "title": "PHerc0826 ink render: every winding of the winding-model refits vs the First Letters recipe (ink_9um)",
+ "notes": "PHerc0826 (First Letters eligible), z [8928, 9728). The First Letters recipe fits windings that do not follow the sheets, and a render along such a winding crosses several sheets, so an ink model is unlikely to show text on it. This notebook renders the same windings of the recipe fit and of the refits that use the Vesuvius winding model's crossings (notebook pherc0826-winding-model-supervision) and runs the public ink_9um model on them, after checking the render + ink chain on a curated segment with published labels.",
+ "runs": {
+  "W12_winding_model": "all",
+  "W48_winding_model": "all",
+  "A_recipe": [
+   10,
+   15,
+   20,
+   25,
+   30,
+   35,
+   40,
+   45,
+   50,
+   55,
+   60,
+   65,
+   70,
+   75,
+   80,
+   85,
+   90,
+   95,
+   100,
+   105,
+   110,
+   115,
+   120,
+   125
+  ]
+ },
+ "windings": [
+  60,
+  80,
+  100
+ ],
+ "variant": "_spliced",
+ "control": {
+  "segment": "PHerc0139/segments/20260317000000-w035_2026031718",
+  "mesh": "20260317000000-on-20250728140407-9.362um.tifxyz",
+  "sv": "9.362um-1.2m-113keV-volume-20250728140407.zarr",
+  "volume": "PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr",
+  "rows": [
+   700,
+   1724
+  ],
+  "cols": [
+   1100,
+   2124
+  ],
+  "labels_local": "/home/claude/vc/ink/w035_labels/inklabels.zarr",
+  "supervision_local": "/home/claude/vc/ink/w035_labels/supervision.zarr"
+ },
+ "png_scale": 0.5,
+ "umbilicus": "20250821151701-umbilicus-20260808113303.json"
+}

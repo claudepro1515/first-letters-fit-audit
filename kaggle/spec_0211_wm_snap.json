@@ -1,0 +1,72 @@
+{
+ "scroll": "PHerc0211",
+ "run": "20250821151803",
+ "umbilicus": "20250821151803-umbilicus-20260808112626.json",
+ "lasagna": "20250821151803-lasagna-20260419180421",
+ "volume": "20250821151803-9.362um-1.2m-113keV-masked.zarr",
+ "z": [
+  8000,
+  9000
+ ],
+ "sheet_um": 141,
+ "sense": "CW",
+ "steps": 30000,
+ "seed_steps": 2000,
+ "base": {
+  "input_disable_patches": true,
+  "input_use_verified_patches": false,
+  "input_use_fibers": false,
+  "input_use_fiber_directions": false,
+  "input_use_pcl_absolute": false,
+  "input_use_pcl_drawn_control_points": false,
+  "input_use_pcl_relative": false,
+  "input_use_pcl_same_winding": false,
+  "input_use_tracks": true,
+  "input_use_normals": true,
+  "input_use_gradient_magnitude": false,
+  "loss_weight_shell_outer": 0
+ },
+ "seed_overrides": {
+  "input_use_outer_shell": false,
+  "input_use_winding_inference": false,
+  "dense_spacing_mode": "grad_mag",
+  "loss_weight_dense_spacing": 0
+ },
+ "runs": {
+  "W48_ACW_snap": {
+   "input_use_outer_shell": true,
+   "input_use_winding_inference": true,
+   "dense_spacing_mode": "winding_model",
+   "loss_weight_dense_spacing": 48.0,
+   "loss_weight_dense_spacing_density": 48.0,
+   "__phase_weight": 48.0,
+   "__store": "snapped",
+   "__sense": "ACW"
+  },
+  "W48_CW_snap": {
+   "input_use_outer_shell": true,
+   "input_use_winding_inference": true,
+   "dense_spacing_mode": "winding_model",
+   "loss_weight_dense_spacing": 48.0,
+   "loss_weight_dense_spacing_density": 48.0,
+   "__phase_weight": 48.0,
+   "__store": "snapped",
+   "__sense": "CW"
+  }
+ },
+ "infer": {
+  "snap": {
+   "window": 0.5,
+   "prominence": 0.15,
+   "min_gap": 4,
+   "drop_unsnapped": true
+  }
+ },
+ "store_from_input": "pherc0211-winding-model-refits-cw-vs-acw",
+ "audit": "none",
+ "bench": false,
+ "prune_dead_code": true,
+ "version_tag": "0211 snap 2026-09-25",
+ "title": "PHerc0211: refits of either sense on the winding-model store snapped onto the CT's crests, with the phase term",
+ "notes": "Reuses the crossing stores of notebook pherc0211-winding-model-refits-cw-vs-acw (attached; no new inference). Its training store is snapped onto the CT's crests (wm/snap_store.py; only crossings that agree with the CT's crest count are kept) and two refits, anticlockwise and clockwise, identical otherwise (weight 48, phase term 48, 30,000 steps), read it. If the snapped phase puts windings on the sheets, the right sense should do so clearly better than the wrong one. Full audit: CPU audit notebook."
+}

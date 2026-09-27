@@ -1,0 +1,33 @@
+{
+ "scroll": "PHerc0826",
+ "umbilicus": "20250821151701-umbilicus-20260808113303.json",
+ "volume": "20250821151701-9.362um-1.2m-113keV-masked.zarr",
+ "z": [
+  8928,
+  9728
+ ],
+ "sheet_um": 153,
+ "title": "PHerc0826 spiral fits, z [8928, 9728): audit against the winding-model crossing stores",
+ "notes": "Audits every attached fit (recipe, grad_mag variants, winding-model refits) with the same tools. First, for each fit, a block of 16 consecutive windings is scored as fitted and after tools/phase_align.py (crest mode: to the nearest crest of the CT, period 17 voxels) moves each winding onto the sheet it runs along: the model-free CT check (sheet_hits.py: is the CT brighter where the fit's windings cross a ray than half-way between them?), the gaps between consecutive windings (two windings on one sheet) and the share of the surface in voids (surface_void.py). Then: agreement with the winding model on rays not used for fitting (held-out store), the model-free check on radial rays from the umbilicus and on the store's rays (the model's own crossings are scored the same way), winding pitch, render contrast, and CT cross-sections with every winding drawn (full resolution at three places).",
+ "sheet_hits": {
+  "radial": 80,
+  "r0": 300,
+  "r1": 2200,
+  "store_rays": 600
+ },
+ "lasagna": "20250821151701-lasagna-20260419180421",
+ "align": {
+  "windings": 16,
+  "period_vox": 17.0
+ },
+ "order": [
+  "W100g2_phase48_snap",
+  "W100g2_phase48",
+  "W48_winding_model",
+  "W12_winding_model",
+  "A_recipe",
+  "C2_clampcore_w100",
+  "S_seed"
+ ],
+ "agreement_train": false
+}

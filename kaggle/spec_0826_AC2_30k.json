@@ -1,0 +1,51 @@
+{
+ "scroll": "PHerc0826",
+ "run": "20250821151701",
+ "umbilicus": "20250821151701-umbilicus-20260808113303.json",
+ "lasagna": "20250821151701-lasagna-20260419180421",
+ "volume": "20250821151701-9.362um-1.2m-113keV-masked.zarr",
+ "z": [
+  8928,
+  9728
+ ],
+ "sheet_um": 153,
+ "sense": "CW",
+ "steps": 30000,
+ "base": {
+  "input_disable_patches": true,
+  "input_use_verified_patches": false,
+  "input_use_fibers": false,
+  "input_use_fiber_directions": false,
+  "input_use_outer_shell": false,
+  "input_use_winding_inference": false,
+  "input_use_pcl_absolute": false,
+  "input_use_pcl_drawn_control_points": false,
+  "input_use_pcl_relative": false,
+  "input_use_pcl_same_winding": false,
+  "input_use_tracks": true,
+  "input_use_normals": true,
+  "loss_weight_shell_outer": 0,
+  "dense_spacing_mode": "grad_mag"
+ },
+ "runs": {
+  "A_recipe": {
+   "input_use_gradient_magnitude": false,
+   "loss_weight_dense_spacing": 0
+  },
+  "C2_clampcore_w100": {
+   "input_use_gradient_magnitude": true,
+   "loss_weight_dense_spacing": 100.0
+  }
+ },
+ "variants": {
+  "C2_clampcore_w100": {
+   "gradmag_clamp": [
+    40,
+    80
+   ],
+   "gradmag_core_radius_vox": 250
+  }
+ },
+ "title": "Spiral fit of PHerc0826, z [8928, 9728): recipe vs. clamped spacing prior without the core, 30,000 steps",
+ "notes": "The recipe's full 30,000 steps (earlier comparisons used 7,469). Run A is the First Letters recipe (tracks + normals, spacing loss off). Run C2 turns the grad_mag spacing loss on at weight 100 with the Lasagna density clipped to 12.5-25 voxels per winding (u8 40-80) and ignored within 250 voxels of the umbilicus (a debris core without sheets)."
+}

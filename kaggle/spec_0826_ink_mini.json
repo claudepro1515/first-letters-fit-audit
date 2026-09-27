@@ -1,0 +1,48 @@
+{
+ "scroll": "PHerc0826",
+ "volume": "20250821151701-9.362um-1.2m-113keV-masked.zarr",
+ "title": "PHerc0826 ink render on CPU: the W48 refit, the same windings moved onto the sheets, and the First Letters recipe (windings 60, 80, 100)",
+ "notes": "PHerc0826 (First Letters eligible), z [8928, 9728). The First Letters recipe fits windings that do not follow the sheets, and a render along such a winding crosses several sheets, so an ink model is unlikely to show text on it. This notebook renders three windings (60, 80, 100) of the recipe fit, of the refit W48 (notebook pherc0826-winding-model-supervision) and of W48 moved onto the sheets with tools/phase_align.py (crest mode: to the nearest crest of the CT, period 17 voxels), and runs the public ink_9um model on them, after checking the render + ink chain on a curated segment with published labels. Runs on CPU (free); the full set of windings runs on GPU in a later version.",
+ "runs": {
+  "W48_winding_model": [
+   60,
+   80,
+   100
+  ],
+  "A_recipe": [
+   60,
+   80,
+   100
+  ]
+ },
+ "windings": [
+  60,
+  80,
+  100
+ ],
+ "variant": "_spliced",
+ "control": {
+  "segment": "PHerc0139/segments/20260317000000-w035_2026031718",
+  "mesh": "20260317000000-on-20250728140407-9.362um.tifxyz",
+  "sv": "9.362um-1.2m-113keV-volume-20250728140407.zarr",
+  "volume": "PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr",
+  "rows": [
+   700,
+   1724
+  ],
+  "cols": [
+   1100,
+   2124
+  ],
+  "labels_local": "/home/claude/vc/ink/w035_labels/inklabels.zarr",
+  "supervision_local": "/home/claude/vc/ink/w035_labels/supervision.zarr"
+ },
+ "png_scale": 0.5,
+ "umbilicus": "20250821151701-umbilicus-20260808113303.json",
+ "align": {
+  "runs": [
+   "W48_winding_model"
+  ],
+  "period_vox": 17.0
+ }
+}

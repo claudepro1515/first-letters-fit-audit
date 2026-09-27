@@ -1,0 +1,39 @@
+{
+ "scroll": "PHerc0211",
+ "umbilicus": "20250821151803-umbilicus-20260808112626.json",
+ "volume": "20250821151803-9.362um-1.2m-113keV-masked.zarr",
+ "z": [
+  8000,
+  9000
+ ],
+ "sheet_um": 141,
+ "sheet_hits": {
+  "radial": 80,
+  "r0": 300,
+  "r1": 2000,
+  "store_rays": 600
+ },
+ "extra_meshes": [
+  {
+   "repo": "https://github.com/armando-gaona/pherc0211-first-letters-free-compute.git",
+   "path": "meshes",
+   "label": "armando_recipe_30k_CW"
+  }
+ ],
+ "title": "PHerc0211 fits, z [8000, 9000): model-free CT check and audit (published recipe fit, winding-model refits CW and ACW)",
+ "notes": "Audits every attached fit and the published recipe fit of the same band (armando-gaona, cloned) with the same tools. First, for each fit, a block of 16 windings as fitted and after tools/phase_align.py (crest mode: to the nearest crest of the CT, period 17 voxels) moves them onto the sheets: model-free CT check (sheet_hits.py), gaps between consecutive windings, share of the surface in voids. Then agreement with the winding model on held-out rays, winding pitch, render contrast and full-resolution cross-sections. The refits with the two spiral senses (CW, ACW) are compared: a fit of the wrong sense cannot follow the sheets around a whole turn.",
+ "lasagna": "20250821151803-lasagna-20260419180421",
+ "align": {
+  "windings": 16,
+  "period_vox": 17.0
+ },
+ "order": [
+  "W48_ACW_snap",
+  "W48_CW_snap",
+  "W48_CW",
+  "W48_ACW",
+  "armando_recipe_30k_CW",
+  "S_seed"
+ ],
+ "agreement_train": false
+}

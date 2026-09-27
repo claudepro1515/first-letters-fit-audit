@@ -1,0 +1,78 @@
+{
+ "scroll": "PHerc0211",
+ "run": "20250821151803",
+ "umbilicus": "20250821151803-umbilicus-20260808112626.json",
+ "lasagna": "20250821151803-lasagna-20260419180421",
+ "volume": "20250821151803-9.362um-1.2m-113keV-masked.zarr",
+ "z": [
+  8000,
+  9000
+ ],
+ "sheet_um": 141,
+ "sense": "CW",
+ "steps": 30000,
+ "seed_steps": 2000,
+ "base": {
+  "input_disable_patches": true,
+  "input_use_verified_patches": false,
+  "input_use_fibers": false,
+  "input_use_fiber_directions": false,
+  "input_use_pcl_absolute": false,
+  "input_use_pcl_drawn_control_points": false,
+  "input_use_pcl_relative": false,
+  "input_use_pcl_same_winding": false,
+  "input_use_tracks": true,
+  "input_use_normals": true,
+  "input_use_gradient_magnitude": false,
+  "loss_weight_shell_outer": 0
+ },
+ "seed_overrides": {
+  "input_use_outer_shell": false,
+  "input_use_winding_inference": false,
+  "dense_spacing_mode": "grad_mag",
+  "loss_weight_dense_spacing": 0
+ },
+ "runs": {
+  "W48_CW": {
+   "input_use_outer_shell": true,
+   "input_use_winding_inference": true,
+   "dense_spacing_mode": "winding_model",
+   "loss_weight_dense_spacing": 48.0,
+   "loss_weight_dense_spacing_density": 48.0,
+   "__sense": "CW"
+  },
+  "W48_ACW": {
+   "input_use_outer_shell": true,
+   "input_use_winding_inference": true,
+   "dense_spacing_mode": "winding_model",
+   "loss_weight_dense_spacing": 48.0,
+   "loss_weight_dense_spacing_density": 48.0,
+   "__sense": "ACW"
+  }
+ },
+ "infer": {
+  "winding_step": 4,
+  "spacings": [
+   64,
+   80,
+   96,
+   128
+  ],
+  "budget_min": 75,
+  "first": 10,
+  "last": 130,
+  "held_first": 12,
+  "held_step": 8,
+  "column_grid": "3:40"
+ },
+ "title": "PHerc0211 winding-model refits, CW vs ACW, vs the published recipe fit",
+ "notes": "PHerc0211, z [8000, 9000): the band of armando-gaona's published First Letters run (recipe, CW, no ink, render contrast 5x below a curated segment). The sense of PHerc0211 is not published. The store (crossing counts along rays, 3 x 3 columns per slab) does not depend on it; the refits use it both ways, CW and ACW (winding_model loss, weight 48: on PHerc0826 it matched the store better than 12). The audit adds armando-gaona's published meshes.",
+ "extra_meshes": [
+  {
+   "repo": "https://github.com/armando-gaona/pherc0211-first-letters-free-compute.git",
+   "path": "meshes",
+   "label": "armando_recipe_30k_CW"
+  }
+ ],
+ "audit": "light"
+}

@@ -1,0 +1,83 @@
+{
+ "scroll": "PHerc0826",
+ "run": "20250821151701",
+ "umbilicus": "20250821151701-umbilicus-20260808113303.json",
+ "lasagna": "20250821151701-lasagna-20260419180421",
+ "volume": "20250821151701-9.362um-1.2m-113keV-masked.zarr",
+ "z": [
+  8928,
+  9728
+ ],
+ "sheet_um": 153,
+ "sense": "CW",
+ "steps": 30000,
+ "seed_steps": 2000,
+ "base": {
+  "input_disable_patches": true,
+  "input_use_verified_patches": false,
+  "input_use_fibers": false,
+  "input_use_fiber_directions": false,
+  "input_use_pcl_absolute": false,
+  "input_use_pcl_drawn_control_points": false,
+  "input_use_pcl_relative": false,
+  "input_use_pcl_same_winding": false,
+  "input_use_tracks": true,
+  "input_use_normals": true,
+  "input_use_gradient_magnitude": false,
+  "loss_weight_shell_outer": 0
+ },
+ "seed_overrides": {
+  "input_use_outer_shell": false,
+  "input_use_winding_inference": false,
+  "dense_spacing_mode": "grad_mag",
+  "loss_weight_dense_spacing": 0
+ },
+ "runs": {
+  "W100g2_phase48": {
+   "input_use_outer_shell": true,
+   "input_use_winding_inference": true,
+   "dense_spacing_mode": "winding_model",
+   "loss_weight_dense_spacing": 100.0,
+   "loss_weight_dense_spacing_density": 100.0,
+   "__phase_weight": 48.0
+  },
+  "W100g2_phase48_snap": {
+   "input_use_outer_shell": true,
+   "input_use_winding_inference": true,
+   "dense_spacing_mode": "winding_model",
+   "loss_weight_dense_spacing": 100.0,
+   "loss_weight_dense_spacing_density": 100.0,
+   "__phase_weight": 48.0,
+   "__store": "snapped"
+  }
+ },
+ "infer": {
+  "winding_step": 4,
+  "spacings": [
+   64,
+   80,
+   96,
+   128
+  ],
+  "budget_min": 75,
+  "first": 10,
+  "last": 130,
+  "held_first": 12,
+  "held_step": 8,
+  "column_grid": "3:40",
+  "snap": {
+   "window": 0.5,
+   "prominence": 0.15,
+   "min_gap": 4,
+   "drop_unsnapped": true
+  }
+ },
+ "title": "PHerc0826 winding-model supervision, second generation: aligned seeds, 9 rays per slab, phase term on the model's or the CT-snapped crossings",
+ "notes": "Second-generation store for PHerc0826 z [8928, 9728), seeded on the W48 refit's windings moved onto the sheets (tools/phase_align.py, period 17 voxels). Two refits (weight 100, 30,000 steps) with the phase term (weight 48) on the model's crossings or on the crossings snapped onto the CT's crests (wm/snap_store.py).",
+ "seed_from_input": "W48_winding_model",
+ "audit": "none",
+ "bench": false,
+ "align_seeds_period_vox": 17.0,
+ "prune_dead_code": true,
+ "version_tag": "gen2 snap 2026-09-25b"
+}

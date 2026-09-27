@@ -1,0 +1,50 @@
+{
+ "scroll": "PHerc0826",
+ "run": "20250821151701",
+ "umbilicus": "20250821151701-umbilicus-20260808113303.json",
+ "lasagna": "20250821151701-lasagna-20260419180421",
+ "volume": "20250821151701-9.362um-1.2m-113keV-masked.zarr",
+ "z": [
+  8928,
+  9728
+ ],
+ "sheet_um": 153,
+ "sense": "CW",
+ "steps": 2000,
+ "audit": "pitch_only",
+ "base": {
+  "input_disable_patches": true,
+  "input_use_verified_patches": false,
+  "input_use_fibers": false,
+  "input_use_fiber_directions": false,
+  "input_use_outer_shell": false,
+  "input_use_winding_inference": false,
+  "input_use_pcl_absolute": false,
+  "input_use_pcl_drawn_control_points": false,
+  "input_use_pcl_relative": false,
+  "input_use_pcl_same_winding": false,
+  "input_use_tracks": true,
+  "input_use_normals": true,
+  "loss_weight_shell_outer": 0,
+  "dense_spacing_mode": "grad_mag",
+  "input_use_gradient_magnitude": false,
+  "loss_weight_dense_spacing": 0
+ },
+ "runs": {
+  "D24_recipe_dr24": {
+   "model_initial_dr_per_winding": 24.0
+  },
+  "D32_recipe_dr32": {
+   "model_initial_dr_per_winding": 32.0
+  },
+  "D16_recipe_wd0": {
+   "optimizer_weight_decay_gap_expander": 0.0
+  },
+  "D24_recipe_dr24_notracks": {
+   "model_initial_dr_per_winding": 24.0,
+   "input_use_tracks": false
+  }
+ },
+ "title": "PHerc0826 z [8928, 9728): what sets the First Letters recipe's winding spacing? Initial spacing and weight-decay sweep (2,000 steps)",
+ "notes": "The First Letters recipe (tracks + Lasagna normals, dense spacing loss off) leaves windings about twice as dense as the sheets. With no loss on the spacing, the spacing may simply stay where it starts: villa's default model_initial_dr_per_winding is 16 voxels, with weight decay 0.01 on the gap expander. Four 2,000-step recipe fits change only that: initial spacing 24 and 32 voxels, weight decay 0, and initial spacing 24 without tracks. The 2,000-step recipe fit with the defaults is the seed fit S of notebook pherc0826-winding-model-supervision. Audit here: winding pitch and radius per winding only; the full audit (held-out agreement, CT checks, cross-sections) runs in the CPU audit notebook."
+}

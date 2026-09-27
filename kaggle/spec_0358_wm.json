@@ -1,0 +1,71 @@
+{
+ "scroll": "PHerc0358",
+ "run": "20250821151737",
+ "umbilicus": "https://raw.githubusercontent.com/AlexeyDrobkovStrikesBack/herculaneum-umbilici/main/PHerc0358_umbilicus.json",
+ "lasagna": "20250821151737-lasagna-20260419180421",
+ "volume": "20250821151737-9.362um-1.2m-113keV-masked.zarr",
+ "z": [
+  8800,
+  9600
+ ],
+ "sheet_um": 138,
+ "sense": "CW",
+ "steps": 30000,
+ "seed_steps": 2000,
+ "base": {
+  "input_disable_patches": true,
+  "input_use_verified_patches": false,
+  "input_use_fibers": false,
+  "input_use_fiber_directions": false,
+  "input_use_pcl_absolute": false,
+  "input_use_pcl_drawn_control_points": false,
+  "input_use_pcl_relative": false,
+  "input_use_pcl_same_winding": false,
+  "input_use_tracks": true,
+  "input_use_normals": true,
+  "input_use_gradient_magnitude": false,
+  "loss_weight_shell_outer": 0
+ },
+ "seed_overrides": {
+  "input_use_outer_shell": false,
+  "input_use_winding_inference": false,
+  "dense_spacing_mode": "grad_mag",
+  "loss_weight_dense_spacing": 0
+ },
+ "runs": {
+  "W48_CW": {
+   "input_use_outer_shell": true,
+   "input_use_winding_inference": true,
+   "dense_spacing_mode": "winding_model",
+   "loss_weight_dense_spacing": 48.0,
+   "loss_weight_dense_spacing_density": 48.0,
+   "__sense": "CW"
+  },
+  "W48_ACW": {
+   "input_use_outer_shell": true,
+   "input_use_winding_inference": true,
+   "dense_spacing_mode": "winding_model",
+   "loss_weight_dense_spacing": 48.0,
+   "loss_weight_dense_spacing_density": 48.0,
+   "__sense": "ACW"
+  }
+ },
+ "infer": {
+  "winding_step": 4,
+  "spacings": [
+   64,
+   80,
+   96,
+   128
+  ],
+  "budget_min": 75,
+  "first": 10,
+  "last": 130,
+  "held_first": 12,
+  "held_step": 8,
+  "column_grid": "3:40"
+ },
+ "title": "PHerc0358 winding-model supervision: store and refits with both spiral senses (CW, ACW)",
+ "notes": "PHerc0358 (First Letters eligible; one of the two best-contrast eligible scans in first-letters-scan-atlas), z [8800, 9600). No spiral sense is published for this scroll and its umbilicus is the community one (AlexeyDrobkovStrikesBack/herculaneum-umbilici). A 2,000-step recipe fit seeds the Vesuvius winding model (9 rays per slab); the exported crossing store counts sheets along rays and does not depend on the sense; refits with the winding-model loss at weight 48 are run with each sense, and only the right one can put its windings on the sheets.",
+ "audit": "none"
+}

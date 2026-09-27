@@ -1,0 +1,52 @@
+{
+ "scroll": "PHerc0826",
+ "run": "20250821151701",
+ "umbilicus": "20250821151701-umbilicus-20260808113303.json",
+ "lasagna": "20250821151701-lasagna-20260419180421",
+ "volume": "20250821151701-9.362um-1.2m-113keV-masked.zarr",
+ "z": [8928, 9728],
+ "sheet_um": 153,
+ "sense": "CW",
+ "steps": 30000,
+ "seed_steps": 2000,
+ "base": {
+  "input_disable_patches": true,
+  "input_use_verified_patches": false,
+  "input_use_fibers": false,
+  "input_use_fiber_directions": false,
+  "input_use_pcl_absolute": false,
+  "input_use_pcl_drawn_control_points": false,
+  "input_use_pcl_relative": false,
+  "input_use_pcl_same_winding": false,
+  "input_use_tracks": true,
+  "input_use_normals": true,
+  "input_use_gradient_magnitude": false,
+  "loss_weight_shell_outer": 0
+ },
+ "seed_overrides": {
+  "input_use_outer_shell": false,
+  "input_use_winding_inference": false,
+  "dense_spacing_mode": "grad_mag",
+  "loss_weight_dense_spacing": 0
+ },
+ "runs": {
+  "W12_winding_model": {
+   "input_use_outer_shell": true,
+   "input_use_winding_inference": true,
+   "dense_spacing_mode": "winding_model",
+   "loss_weight_dense_spacing": 12.0,
+   "loss_weight_dense_spacing_density": 12.0
+  },
+  "W48_winding_model": {
+   "input_use_outer_shell": true,
+   "input_use_winding_inference": true,
+   "dense_spacing_mode": "winding_model",
+   "loss_weight_dense_spacing": 48.0,
+   "loss_weight_dense_spacing_density": 48.0
+  }
+ },
+ "infer": {"winding_step": 4, "spacings": [64, 80, 96, 128], "budget_min": 75, "first": 10, "last": 130,
+           "held_first": 12, "held_step": 8},
+ "title": "PHerc0826 winding-model supervision: seed fit, winding inference, refit, audit",
+ "notes": "PHerc0826 (First Letters eligible), z [8928, 9728). fit_spiral's production spacing loss (dense_spacing_mode winding_model) needs a crossing store made by the Vesuvius winding model; one is published only for PHercParis4, so the First Letters recipe fits the eligible scrolls with the spacing loss off, and their windings do not follow the sheets. This notebook makes the store for this band with the public 9 um model and refits with it (loss weights 12, the default, and 48). Control: the recipe itself at 30,000 steps on the same band (notebook pherc0826-spiral-fit-30k-recipe-vs-clamped-prior)."
+}
